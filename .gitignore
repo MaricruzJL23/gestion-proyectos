@@ -7,4 +7,4 @@
 Resources/files/*
 /app/config/parameters.ini
 !*.gitkeep
-inforve2.sublime-workspace
+*.sublime-workspace

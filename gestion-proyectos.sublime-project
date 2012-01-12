@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/julian/proyectos/gestion-proyectos",
+            "file_exclude_patterns": ["*workspace"],
+            "folder_exclude_patterns": [
+                "vendor",
+                "bin",
+                "web",
+                "cache",
+                "logs"
+            ]
+		}
+	]
+}
