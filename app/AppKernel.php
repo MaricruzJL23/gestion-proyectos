@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new BCC\ExtraToolsBundle\BCCExtraToolsBundle(),
+            new Julian\Bundle\GestionBundle\JulianGestionBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -27,8 +28,10 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
 
-            $bundles[] = new Behat\BehatBundle\BehatBundle();
-            $bundles[] = new Behat\MinkBundle\MinkBundle();
+            if ($this->getEnvironment() == 'test') {
+                $bundles[] = new Behat\BehatBundle\BehatBundle();
+                $bundles[] = new Behat\MinkBundle\MinkBundle();
+            }
         }
 
         return $bundles;
